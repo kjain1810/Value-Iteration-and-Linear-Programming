@@ -62,8 +62,6 @@ def value_iteration():
         utilities = temp
         if delta < DELTA:
             done = True
-        # if index == 10:
-        #     break
     return policies, utilities
 
 

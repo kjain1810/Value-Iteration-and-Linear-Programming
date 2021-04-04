@@ -1,3 +1,34 @@
+import numpy as np
+from functools import reduce
+from copy import deepcopy
+from operator import add
+
+# HYPER PARAMETERS
+
+TASK = 0
+GAMMA = 0.999
+if TASK == 3:
+    GAMMA = 0.25
+DELTA = 1e-3
+
+POSITION = ['W', 'N', 'E', 'S', 'C']
+MATERIAL = [0, 1, 2]
+ARROW = [0, 1, 2, 3]
+STATE = ['D', 'R']
+HEALTH = [0, 1, 2, 3, 4]
+
+MAIN_PATH = "./output/part_2_trace.txt"
+if TASK == 1:
+    MAIN_PATH = "./output/part_2_task_2.1_trace.txt"
+if TASK == 2:
+    MAIN_PATH = "./output/part_2_task_2.2_trace.txt"
+if TASK == 3:
+    MAIN_PATH = "./output/part_2_task_2.3_trace.txt"
+
+LAST_ITER_PATH = "lastiteration.txt"
+
+printer = open(MAIN_PATH, "w+")
+
 STEP_COST = -20
 FIN_REWARD = 50
 HIT_COST = -40
@@ -281,19 +312,61 @@ class IndianaJones:
         return states
 
 
-if __name__ == "__main__":
-    positions = ["N", "S", "E", "W", "C"]
-    mmstates = ["D", "R"]
+def value_iteration():
+    utilities = np.full((len(POSITION), len(MATERIAL),
+                         len(ARROW), len(STATE), len(HEALTH)), 0.0)
+    policies = np.full((len(POSITION), len(MATERIAL), len(
+        ARROW), len(STATE), len(HEALTH)), "exit    ")
 
-    for pos in positions:
-        for mat in range(3):
-            for arrow in range(4):
-                for mmstate in mmstates:
-                    for mmhealth in range(5):
-                        indiana = IndianaJones(
-                            pos, mat, arrow, mmstate, mmhealth * 25)
-                        dit = {}
-                        dit["state"] = "%s %d %d %s %d" % (
-                            pos, mat, arrow, mmstate, mmhealth * 25)
-                        dit["otp"] = indiana.getNextStates()
-                        print(dit)
+    index = 0
+    done = False
+    while not done:  # one iteration of value iteration
+        printer.write("iteration=%d\n" % (index))
+        index += 1
+        temp = np.zeros(utilities.shape)
+        delta = np.NINF
+
+        for state, util in np.ndenumerate(utilities):
+            properState = IndianaJones(
+                POSITION[state[0]], state[1], state[2], STATE[state[3]], state[4]*25, TASK)
+            if(properState.state_mmhealth == 0):
+                printer.write("(%c,%d,%d,%c,%d):%s=[%f]\n" % (POSITION[state[0]], state[1],
+                                                              state[2], STATE[state[3]], state[4] * 25, "NONE", 0.0))
+                continue
+            actions = properState.getNextStates()
+            new_util = np.NINF
+            for action in actions:
+                finalUtility = 0.0
+                for state_inner in action["states"]:
+                    utilityIndex = (POSITION.index(state_inner["next_pos"]), state_inner["next_mat"], state_inner["next_arrow"], STATE.index(
+                        state_inner["next_mmstate"]), state_inner["next_mmhealth"]//25)
+                    finalUtility += state_inner["probability"]*(
+                        state_inner["reward"] + (GAMMA * utilities[utilityIndex]))
+                new_util = max(float(finalUtility), float(new_util))
+                if(new_util == finalUtility):
+                    policies[state[0], state[1], state[2],
+                             state[3], state[4]] = action["action"]
+            temp[state] = new_util
+            printer.write("(%c,%d,%d,%c,%d):%s=[%f]\n" % (POSITION[state[0]], state[1],
+                                                          state[2], STATE[state[3]], state[4] * 25, policies[state], new_util))
+            delta = max(delta, np.abs(util - new_util))
+        utilities = temp
+        if delta < DELTA:
+            done = True
+        # if index == 10:
+        #     break
+    return policies, utilities
+
+
+if __name__ == "__main__":
+    policies, utilities = value_iteration()
+    # f = open(LAST_ITER_PATH, "w+")
+    # for pos in range(5):
+    #     for mat in range(3):
+    #         for arrow in range(4):
+    #             for mmstate in range(2):
+    #                 for mmhealth in range(5):
+    #                     f.write("%c %d %d %c %d\n" % (POSITION[pos], mat, arrow,
+    #                                                   STATE[mmstate], mmhealth))
+    #                     f.write(policies[pos, mat, arrow, mmstate, mmhealth])
+    #                     f.write("\n")
