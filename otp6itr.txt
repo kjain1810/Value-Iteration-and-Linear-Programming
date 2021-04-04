@@ -1,0 +1,1200 @@
+W 0 0 D 0
+exit    
+W 0 0 D 1
+right
+W 0 0 D 2
+right
+W 0 0 D 3
+stay
+W 0 0 D 4
+stay
+W 0 0 R 0
+exit    
+W 0 0 R 1
+right
+W 0 0 R 2
+stay
+W 0 0 R 3
+stay
+W 0 0 R 4
+stay
+W 0 1 D 0
+exit    
+W 0 1 D 1
+right
+W 0 1 D 2
+right
+W 0 1 D 3
+shoot
+W 0 1 D 4
+stay
+W 0 1 R 0
+exit    
+W 0 1 R 1
+right
+W 0 1 R 2
+shoot
+W 0 1 R 3
+shoot
+W 0 1 R 4
+shoot
+W 0 2 D 0
+exit    
+W 0 2 D 1
+right
+W 0 2 D 2
+right
+W 0 2 D 3
+shoot
+W 0 2 D 4
+shoot
+W 0 2 R 0
+exit    
+W 0 2 R 1
+shoot
+W 0 2 R 2
+stay
+W 0 2 R 3
+shoot
+W 0 2 R 4
+shoot
+W 0 3 D 0
+exit    
+W 0 3 D 1
+shoot
+W 0 3 D 2
+right
+W 0 3 D 3
+right
+W 0 3 D 4
+shoot
+W 0 3 R 0
+exit    
+W 0 3 R 1
+shoot
+W 0 3 R 2
+shoot
+W 0 3 R 3
+shoot
+W 0 3 R 4
+shoot
+W 1 0 D 0
+exit    
+W 1 0 D 1
+right
+W 1 0 D 2
+right
+W 1 0 D 3
+stay
+W 1 0 D 4
+stay
+W 1 0 R 0
+exit    
+W 1 0 R 1
+right
+W 1 0 R 2
+stay
+W 1 0 R 3
+stay
+W 1 0 R 4
+stay
+W 1 1 D 0
+exit    
+W 1 1 D 1
+right
+W 1 1 D 2
+right
+W 1 1 D 3
+shoot
+W 1 1 D 4
+stay
+W 1 1 R 0
+exit    
+W 1 1 R 1
+right
+W 1 1 R 2
+shoot
+W 1 1 R 3
+shoot
+W 1 1 R 4
+shoot
+W 1 2 D 0
+exit    
+W 1 2 D 1
+right
+W 1 2 D 2
+right
+W 1 2 D 3
+shoot
+W 1 2 D 4
+shoot
+W 1 2 R 0
+exit    
+W 1 2 R 1
+shoot
+W 1 2 R 2
+stay
+W 1 2 R 3
+shoot
+W 1 2 R 4
+shoot
+W 1 3 D 0
+exit    
+W 1 3 D 1
+shoot
+W 1 3 D 2
+right
+W 1 3 D 3
+right
+W 1 3 D 4
+shoot
+W 1 3 R 0
+exit    
+W 1 3 R 1
+shoot
+W 1 3 R 2
+shoot
+W 1 3 R 3
+shoot
+W 1 3 R 4
+shoot
+W 2 0 D 0
+exit    
+W 2 0 D 1
+right
+W 2 0 D 2
+right
+W 2 0 D 3
+stay
+W 2 0 D 4
+stay
+W 2 0 R 0
+exit    
+W 2 0 R 1
+right
+W 2 0 R 2
+stay
+W 2 0 R 3
+stay
+W 2 0 R 4
+stay
+W 2 1 D 0
+exit    
+W 2 1 D 1
+right
+W 2 1 D 2
+right
+W 2 1 D 3
+shoot
+W 2 1 D 4
+stay
+W 2 1 R 0
+exit    
+W 2 1 R 1
+right
+W 2 1 R 2
+shoot
+W 2 1 R 3
+shoot
+W 2 1 R 4
+shoot
+W 2 2 D 0
+exit    
+W 2 2 D 1
+right
+W 2 2 D 2
+right
+W 2 2 D 3
+shoot
+W 2 2 D 4
+shoot
+W 2 2 R 0
+exit    
+W 2 2 R 1
+shoot
+W 2 2 R 2
+stay
+W 2 2 R 3
+shoot
+W 2 2 R 4
+shoot
+W 2 3 D 0
+exit    
+W 2 3 D 1
+shoot
+W 2 3 D 2
+right
+W 2 3 D 3
+right
+W 2 3 D 4
+shoot
+W 2 3 R 0
+exit    
+W 2 3 R 1
+shoot
+W 2 3 R 2
+shoot
+W 2 3 R 3
+shoot
+W 2 3 R 4
+shoot
+N 0 0 D 0
+exit    
+N 0 0 D 1
+down
+N 0 0 D 2
+down
+N 0 0 D 3
+stay
+N 0 0 D 4
+stay
+N 0 0 R 0
+exit    
+N 0 0 R 1
+stay
+N 0 0 R 2
+stay
+N 0 0 R 3
+stay
+N 0 0 R 4
+stay
+N 0 1 D 0
+exit    
+N 0 1 D 1
+down
+N 0 1 D 2
+down
+N 0 1 D 3
+down
+N 0 1 D 4
+stay
+N 0 1 R 0
+exit    
+N 0 1 R 1
+stay
+N 0 1 R 2
+stay
+N 0 1 R 3
+stay
+N 0 1 R 4
+stay
+N 0 2 D 0
+exit    
+N 0 2 D 1
+down
+N 0 2 D 2
+down
+N 0 2 D 3
+down
+N 0 2 D 4
+stay
+N 0 2 R 0
+exit    
+N 0 2 R 1
+stay
+N 0 2 R 2
+stay
+N 0 2 R 3
+stay
+N 0 2 R 4
+stay
+N 0 3 D 0
+exit    
+N 0 3 D 1
+down
+N 0 3 D 2
+down
+N 0 3 D 3
+down
+N 0 3 D 4
+stay
+N 0 3 R 0
+exit    
+N 0 3 R 1
+down
+N 0 3 R 2
+stay
+N 0 3 R 3
+stay
+N 0 3 R 4
+stay
+N 1 0 D 0
+exit    
+N 1 0 D 1
+craft
+N 1 0 D 2
+craft
+N 1 0 D 3
+craft
+N 1 0 D 4
+stay
+N 1 0 R 0
+exit    
+N 1 0 R 1
+craft
+N 1 0 R 2
+craft
+N 1 0 R 3
+craft
+N 1 0 R 4
+craft
+N 1 1 D 0
+exit    
+N 1 1 D 1
+down
+N 1 1 D 2
+craft
+N 1 1 D 3
+craft
+N 1 1 D 4
+craft
+N 1 1 R 0
+exit    
+N 1 1 R 1
+craft
+N 1 1 R 2
+craft
+N 1 1 R 3
+craft
+N 1 1 R 4
+craft
+N 1 2 D 0
+exit    
+N 1 2 D 1
+down
+N 1 2 D 2
+down
+N 1 2 D 3
+craft
+N 1 2 D 4
+stay
+N 1 2 R 0
+exit    
+N 1 2 R 1
+stay
+N 1 2 R 2
+stay
+N 1 2 R 3
+craft
+N 1 2 R 4
+craft
+N 1 3 D 0
+exit    
+N 1 3 D 1
+down
+N 1 3 D 2
+down
+N 1 3 D 3
+down
+N 1 3 D 4
+stay
+N 1 3 R 0
+exit    
+N 1 3 R 1
+down
+N 1 3 R 2
+stay
+N 1 3 R 3
+stay
+N 1 3 R 4
+craft
+N 2 0 D 0
+exit    
+N 2 0 D 1
+craft
+N 2 0 D 2
+craft
+N 2 0 D 3
+craft
+N 2 0 D 4
+craft
+N 2 0 R 0
+exit    
+N 2 0 R 1
+craft
+N 2 0 R 2
+craft
+N 2 0 R 3
+craft
+N 2 0 R 4
+craft
+N 2 1 D 0
+exit    
+N 2 1 D 1
+down
+N 2 1 D 2
+craft
+N 2 1 D 3
+craft
+N 2 1 D 4
+craft
+N 2 1 R 0
+exit    
+N 2 1 R 1
+craft
+N 2 1 R 2
+craft
+N 2 1 R 3
+craft
+N 2 1 R 4
+craft
+N 2 2 D 0
+exit    
+N 2 2 D 1
+down
+N 2 2 D 2
+down
+N 2 2 D 3
+craft
+N 2 2 D 4
+stay
+N 2 2 R 0
+exit    
+N 2 2 R 1
+stay
+N 2 2 R 2
+stay
+N 2 2 R 3
+craft
+N 2 2 R 4
+craft
+N 2 3 D 0
+exit    
+N 2 3 D 1
+down
+N 2 3 D 2
+down
+N 2 3 D 3
+down
+N 2 3 D 4
+stay
+N 2 3 R 0
+exit    
+N 2 3 R 1
+down
+N 2 3 R 2
+stay
+N 2 3 R 3
+stay
+N 2 3 R 4
+craft
+E 0 0 D 0
+exit    
+E 0 0 D 1
+hit
+E 0 0 D 2
+hit
+E 0 0 D 3
+hit
+E 0 0 D 4
+hit
+E 0 0 R 0
+exit    
+E 0 0 R 1
+hit
+E 0 0 R 2
+hit
+E 0 0 R 3
+left
+E 0 0 R 4
+left
+E 0 1 D 0
+exit    
+E 0 1 D 1
+shoot
+E 0 1 D 2
+hit
+E 0 1 D 3
+hit
+E 0 1 D 4
+hit
+E 0 1 R 0
+exit    
+E 0 1 R 1
+shoot
+E 0 1 R 2
+hit
+E 0 1 R 3
+hit
+E 0 1 R 4
+left
+E 0 2 D 0
+exit    
+E 0 2 D 1
+shoot
+E 0 2 D 2
+shoot
+E 0 2 D 3
+hit
+E 0 2 D 4
+hit
+E 0 2 R 0
+exit    
+E 0 2 R 1
+shoot
+E 0 2 R 2
+shoot
+E 0 2 R 3
+hit
+E 0 2 R 4
+left
+E 0 3 D 0
+exit    
+E 0 3 D 1
+shoot
+E 0 3 D 2
+shoot
+E 0 3 D 3
+shoot
+E 0 3 D 4
+hit
+E 0 3 R 0
+exit    
+E 0 3 R 1
+shoot
+E 0 3 R 2
+shoot
+E 0 3 R 3
+shoot
+E 0 3 R 4
+left
+E 1 0 D 0
+exit    
+E 1 0 D 1
+hit
+E 1 0 D 2
+hit
+E 1 0 D 3
+hit
+E 1 0 D 4
+hit
+E 1 0 R 0
+exit    
+E 1 0 R 1
+hit
+E 1 0 R 2
+hit
+E 1 0 R 3
+left
+E 1 0 R 4
+left
+E 1 1 D 0
+exit    
+E 1 1 D 1
+shoot
+E 1 1 D 2
+hit
+E 1 1 D 3
+hit
+E 1 1 D 4
+hit
+E 1 1 R 0
+exit    
+E 1 1 R 1
+shoot
+E 1 1 R 2
+hit
+E 1 1 R 3
+hit
+E 1 1 R 4
+left
+E 1 2 D 0
+exit    
+E 1 2 D 1
+shoot
+E 1 2 D 2
+shoot
+E 1 2 D 3
+hit
+E 1 2 D 4
+hit
+E 1 2 R 0
+exit    
+E 1 2 R 1
+shoot
+E 1 2 R 2
+shoot
+E 1 2 R 3
+hit
+E 1 2 R 4
+left
+E 1 3 D 0
+exit    
+E 1 3 D 1
+shoot
+E 1 3 D 2
+shoot
+E 1 3 D 3
+shoot
+E 1 3 D 4
+hit
+E 1 3 R 0
+exit    
+E 1 3 R 1
+shoot
+E 1 3 R 2
+shoot
+E 1 3 R 3
+shoot
+E 1 3 R 4
+left
+E 2 0 D 0
+exit    
+E 2 0 D 1
+hit
+E 2 0 D 2
+hit
+E 2 0 D 3
+hit
+E 2 0 D 4
+hit
+E 2 0 R 0
+exit    
+E 2 0 R 1
+hit
+E 2 0 R 2
+hit
+E 2 0 R 3
+left
+E 2 0 R 4
+left
+E 2 1 D 0
+exit    
+E 2 1 D 1
+shoot
+E 2 1 D 2
+hit
+E 2 1 D 3
+hit
+E 2 1 D 4
+hit
+E 2 1 R 0
+exit    
+E 2 1 R 1
+shoot
+E 2 1 R 2
+hit
+E 2 1 R 3
+hit
+E 2 1 R 4
+left
+E 2 2 D 0
+exit    
+E 2 2 D 1
+shoot
+E 2 2 D 2
+shoot
+E 2 2 D 3
+hit
+E 2 2 D 4
+hit
+E 2 2 R 0
+exit    
+E 2 2 R 1
+shoot
+E 2 2 R 2
+shoot
+E 2 2 R 3
+hit
+E 2 2 R 4
+left
+E 2 3 D 0
+exit    
+E 2 3 D 1
+shoot
+E 2 3 D 2
+shoot
+E 2 3 D 3
+shoot
+E 2 3 D 4
+hit
+E 2 3 R 0
+exit    
+E 2 3 R 1
+shoot
+E 2 3 R 2
+shoot
+E 2 3 R 3
+shoot
+E 2 3 R 4
+left
+S 0 0 D 0
+exit    
+S 0 0 D 1
+up
+S 0 0 D 2
+up
+S 0 0 D 3
+gather
+S 0 0 D 4
+gather
+S 0 0 R 0
+exit    
+S 0 0 R 1
+stay
+S 0 0 R 2
+stay
+S 0 0 R 3
+gather
+S 0 0 R 4
+gather
+S 0 1 D 0
+exit    
+S 0 1 D 1
+up
+S 0 1 D 2
+up
+S 0 1 D 3
+stay
+S 0 1 D 4
+gather
+S 0 1 R 0
+exit    
+S 0 1 R 1
+stay
+S 0 1 R 2
+stay
+S 0 1 R 3
+gather
+S 0 1 R 4
+gather
+S 0 2 D 0
+exit    
+S 0 2 D 1
+up
+S 0 2 D 2
+up
+S 0 2 D 3
+stay
+S 0 2 D 4
+gather
+S 0 2 R 0
+exit    
+S 0 2 R 1
+stay
+S 0 2 R 2
+stay
+S 0 2 R 3
+gather
+S 0 2 R 4
+gather
+S 0 3 D 0
+exit    
+S 0 3 D 1
+up
+S 0 3 D 2
+up
+S 0 3 D 3
+up
+S 0 3 D 4
+gather
+S 0 3 R 0
+exit    
+S 0 3 R 1
+up
+S 0 3 R 2
+stay
+S 0 3 R 3
+stay
+S 0 3 R 4
+gather
+S 1 0 D 0
+exit    
+S 1 0 D 1
+up
+S 1 0 D 2
+up
+S 1 0 D 3
+gather
+S 1 0 D 4
+gather
+S 1 0 R 0
+exit    
+S 1 0 R 1
+up
+S 1 0 R 2
+stay
+S 1 0 R 3
+gather
+S 1 0 R 4
+gather
+S 1 1 D 0
+exit    
+S 1 1 D 1
+up
+S 1 1 D 2
+up
+S 1 1 D 3
+stay
+S 1 1 D 4
+gather
+S 1 1 R 0
+exit    
+S 1 1 R 1
+up
+S 1 1 R 2
+stay
+S 1 1 R 3
+gather
+S 1 1 R 4
+gather
+S 1 2 D 0
+exit    
+S 1 2 D 1
+up
+S 1 2 D 2
+up
+S 1 2 D 3
+stay
+S 1 2 D 4
+gather
+S 1 2 R 0
+exit    
+S 1 2 R 1
+stay
+S 1 2 R 2
+stay
+S 1 2 R 3
+gather
+S 1 2 R 4
+gather
+S 1 3 D 0
+exit    
+S 1 3 D 1
+up
+S 1 3 D 2
+up
+S 1 3 D 3
+up
+S 1 3 D 4
+gather
+S 1 3 R 0
+exit    
+S 1 3 R 1
+up
+S 1 3 R 2
+stay
+S 1 3 R 3
+stay
+S 1 3 R 4
+gather
+S 2 0 D 0
+exit    
+S 2 0 D 1
+up
+S 2 0 D 2
+up
+S 2 0 D 3
+gather
+S 2 0 D 4
+gather
+S 2 0 R 0
+exit    
+S 2 0 R 1
+up
+S 2 0 R 2
+stay
+S 2 0 R 3
+gather
+S 2 0 R 4
+gather
+S 2 1 D 0
+exit    
+S 2 1 D 1
+up
+S 2 1 D 2
+up
+S 2 1 D 3
+stay
+S 2 1 D 4
+gather
+S 2 1 R 0
+exit    
+S 2 1 R 1
+up
+S 2 1 R 2
+stay
+S 2 1 R 3
+gather
+S 2 1 R 4
+gather
+S 2 2 D 0
+exit    
+S 2 2 D 1
+up
+S 2 2 D 2
+up
+S 2 2 D 3
+stay
+S 2 2 D 4
+gather
+S 2 2 R 0
+exit    
+S 2 2 R 1
+stay
+S 2 2 R 2
+stay
+S 2 2 R 3
+gather
+S 2 2 R 4
+gather
+S 2 3 D 0
+exit    
+S 2 3 D 1
+up
+S 2 3 D 2
+up
+S 2 3 D 3
+up
+S 2 3 D 4
+gather
+S 2 3 R 0
+exit    
+S 2 3 R 1
+up
+S 2 3 R 2
+stay
+S 2 3 R 3
+stay
+S 2 3 R 4
+gather
+C 0 0 D 0
+exit    
+C 0 0 D 1
+right
+C 0 0 D 2
+right
+C 0 0 D 3
+left
+C 0 0 D 4
+left
+C 0 0 R 0
+exit    
+C 0 0 R 1
+right
+C 0 0 R 2
+down
+C 0 0 R 3
+left
+C 0 0 R 4
+left
+C 0 1 D 0
+exit    
+C 0 1 D 1
+right
+C 0 1 D 2
+right
+C 0 1 D 3
+right
+C 0 1 D 4
+left
+C 0 1 R 0
+exit    
+C 0 1 R 1
+shoot
+C 0 1 R 2
+down
+C 0 1 R 3
+left
+C 0 1 R 4
+left
+C 0 2 D 0
+exit    
+C 0 2 D 1
+shoot
+C 0 2 D 2
+right
+C 0 2 D 3
+right
+C 0 2 D 4
+left
+C 0 2 R 0
+exit    
+C 0 2 R 1
+shoot
+C 0 2 R 2
+down
+C 0 2 R 3
+left
+C 0 2 R 4
+left
+C 0 3 D 0
+exit    
+C 0 3 D 1
+shoot
+C 0 3 D 2
+right
+C 0 3 D 3
+right
+C 0 3 D 4
+left
+C 0 3 R 0
+exit    
+C 0 3 R 1
+shoot
+C 0 3 R 2
+left
+C 0 3 R 3
+left
+C 0 3 R 4
+left
+C 1 0 D 0
+exit    
+C 1 0 D 1
+up
+C 1 0 D 2
+right
+C 1 0 D 3
+left
+C 1 0 D 4
+left
+C 1 0 R 0
+exit    
+C 1 0 R 1
+up
+C 1 0 R 2
+up
+C 1 0 R 3
+left
+C 1 0 R 4
+left
+C 1 1 D 0
+exit    
+C 1 1 D 1
+right
+C 1 1 D 2
+right
+C 1 1 D 3
+right
+C 1 1 D 4
+left
+C 1 1 R 0
+exit    
+C 1 1 R 1
+shoot
+C 1 1 R 2
+up
+C 1 1 R 3
+left
+C 1 1 R 4
+left
+C 1 2 D 0
+exit    
+C 1 2 D 1
+shoot
+C 1 2 D 2
+right
+C 1 2 D 3
+right
+C 1 2 D 4
+left
+C 1 2 R 0
+exit    
+C 1 2 R 1
+shoot
+C 1 2 R 2
+up
+C 1 2 R 3
+left
+C 1 2 R 4
+left
+C 1 3 D 0
+exit    
+C 1 3 D 1
+shoot
+C 1 3 D 2
+right
+C 1 3 D 3
+right
+C 1 3 D 4
+left
+C 1 3 R 0
+exit    
+C 1 3 R 1
+shoot
+C 1 3 R 2
+left
+C 1 3 R 3
+left
+C 1 3 R 4
+left
+C 2 0 D 0
+exit    
+C 2 0 D 1
+up
+C 2 0 D 2
+right
+C 2 0 D 3
+left
+C 2 0 D 4
+left
+C 2 0 R 0
+exit    
+C 2 0 R 1
+up
+C 2 0 R 2
+up
+C 2 0 R 3
+left
+C 2 0 R 4
+left
+C 2 1 D 0
+exit    
+C 2 1 D 1
+right
+C 2 1 D 2
+right
+C 2 1 D 3
+right
+C 2 1 D 4
+left
+C 2 1 R 0
+exit    
+C 2 1 R 1
+shoot
+C 2 1 R 2
+up
+C 2 1 R 3
+left
+C 2 1 R 4
+left
+C 2 2 D 0
+exit    
+C 2 2 D 1
+shoot
+C 2 2 D 2
+right
+C 2 2 D 3
+right
+C 2 2 D 4
+left
+C 2 2 R 0
+exit    
+C 2 2 R 1
+shoot
+C 2 2 R 2
+up
+C 2 2 R 3
+left
+C 2 2 R 4
+left
+C 2 3 D 0
+exit    
+C 2 3 D 1
+shoot
+C 2 3 D 2
+right
+C 2 3 D 3
+right
+C 2 3 D 4
+left
+C 2 3 R 0
+exit    
+C 2 3 R 1
+shoot
+C 2 3 R 2
+left
+C 2 3 R 3
+left
+C 2 3 R 4
+left
