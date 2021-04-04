@@ -6,7 +6,7 @@ from indianajones import IndianaJones
 
 # HYPER PARAMETERS
 
-TASK = 3
+TASK = 0
 GAMMA = 0.999
 if TASK == 3:
     GAMMA = 0.25
@@ -79,6 +79,3 @@ if __name__ == "__main__":
                                                       STATE[mmstate], mmhealth))
                         f.write(policies[pos, mat, arrow, mmstate, mmhealth])
                         f.write("\n")
-                        # print(POSITION[pos], mat, arrow,
-                        #       STATE[mmstate], mmhealth)
-                        # print(policies[pos, mat, arrow, mmstate, mmhealth])
