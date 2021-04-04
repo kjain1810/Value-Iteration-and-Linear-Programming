@@ -6,7 +6,10 @@ from indianajones import IndianaJones
 
 # HYPER PARAMETERS
 
+TASK = 3
 GAMMA = 0.999
+if TASK == 3:
+    GAMMA = 0.25
 DELTA = 1e-3
 
 POSITION = ['W', 'N', 'E', 'S', 'C']
@@ -34,7 +37,7 @@ def value_iteration():
 
         for state, util in np.ndenumerate(utilities):
             properState = IndianaJones(
-                POSITION[state[0]], state[1], state[2], STATE[state[3]], state[4]*25)
+                POSITION[state[0]], state[1], state[2], STATE[state[3]], state[4]*25, TASK)
             if(properState.state_mmhealth == 0):
                 print("(%c,%d,%d,%c,%d):%s=[%f]" % (POSITION[state[0]], state[1],
                                                     state[2], STATE[state[3]], state[4] * 25, "NONE", 0.0))

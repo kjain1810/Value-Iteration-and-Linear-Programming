@@ -36,7 +36,7 @@ class IndianaJones:
         elif self.state_pos == "N":
             ij_actions.append("DOWN")
             if self.state_mat > 0:
-                ij_actions.append("craft")
+                ij_actions.append("CRAFT")
         elif self.state_pos == "S":
             ij_actions.append("UP")
             ij_actions.append("GATHER")
@@ -67,6 +67,8 @@ class IndianaJones:
         if x == "STAY":
             return self.state_pos
         pos = self.state_pos
+        if (x == "LEFT" and pos == "E") and self.task == 1:
+            return "W"
         if (x == "LEFT" and pos == "E") or (x == "RIGHT" and pos == "W") or (x == "UP" and pos == "S") or (x == "DOWN" and pos == "N"):
             return "C"
         if x == "LEFT":
@@ -112,7 +114,10 @@ class IndianaJones:
                 succ["next_mat"] = self.state_mat
                 succ["next_arrow"] = self.state_arrow
                 succ["next_mmhealth"] = self.state_mmhealth
-                succ["reward"] = STEP_COST
+                if self.task == 2 and i == "STAY":
+                    succ["reward"] = 0
+                else:
+                    succ["reward"] = STEP_COST
                 if self.state_pos == "E" or self.state_pos == "W":
                     succ["probability"] = 1.0
                 else:
@@ -194,7 +199,7 @@ class IndianaJones:
                 fail["reward"] = STEP_COST
                 ns["states"].append(succ)
                 ns["states"].append(fail)
-            elif i == "craft":
+            elif i == "CRAFT":
                 succ1 = self.getState()
                 succ2 = self.getState()
                 succ3 = self.getState()
