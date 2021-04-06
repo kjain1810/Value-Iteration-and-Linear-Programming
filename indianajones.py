@@ -1,5 +1,5 @@
 STEP_COST = -20
-FIN_REWARD = 50
+FIN_REWARD = 0
 HIT_COST = -40
 
 
@@ -35,11 +35,12 @@ class IndianaJones:
             ij_actions.append("HIT")
         elif self.state_pos == "N":
             ij_actions.append("DOWN")
-            if self.state_mat > 0:
+            if self.state_mat > 0 and self.state_arrow < 3:
                 ij_actions.append("CRAFT")
         elif self.state_pos == "S":
             ij_actions.append("UP")
-            ij_actions.append("GATHER")
+            if self.state_mat < 2:
+                ij_actions.append("GATHER")
         elif self.state_pos == "C":
             ij_actions.append("RIGHT")
             ij_actions.append("LEFT")
@@ -48,9 +49,6 @@ class IndianaJones:
             if self.state_arrow > 0:
                 ij_actions.append("SHOOT")
             ij_actions.append("HIT")
-        # else:
-        #     print("Invalid state: " + self.state_pos)
-        #     exit(0)
         mm_actions = []
         if self.state_mmstate == "D":
             mm_actions.append("STAY")
@@ -58,9 +56,6 @@ class IndianaJones:
         elif self.state_mmstate == "R":
             mm_actions.append("HIT")
             mm_actions.append("STAY")
-        # else:
-        #     print("Invalid state: " + self.state_pos)
-        #     exit(0)
         return ij_actions, mm_actions
 
     def moveState(self, x):
@@ -168,20 +163,11 @@ class IndianaJones:
                     succ["reward"] = STEP_COST + FIN_REWARD
                 else:
                     succ["reward"] = STEP_COST
-                fail = self.getState()
-                fail["next_pos"] = self.state_pos
-                fail["next_mat"] = self.state_mat
-                fail["next_arrow"] = self.state_arrow
-                fail["next_mmhealth"] = self.state_mmhealth
-                fail["reward"] = STEP_COST
                 if self.state_pos == "E":
                     succ["probability"] = 0.2
-                    fail["probability"] = 0.8
                 else:
                     succ["probability"] = 0.1
-                    fail["probability"] = 0.9
                 ns["states"].append(succ)
-                ns["states"].append(fail)
             elif i == "GATHER":
                 succ = self.getState()
                 succ["next_pos"] = self.state_pos
@@ -190,13 +176,6 @@ class IndianaJones:
                 succ["next_mmhealth"] = self.state_mmhealth
                 succ["probability"] = 0.75
                 succ["reward"] = STEP_COST
-                fail = self.getState()
-                fail["next_pos"] = self.state_pos
-                fail["next_mat"] = self.state_mat
-                fail["next_arrow"] = self.state_arrow
-                fail["next_mmhealth"] = self.state_mmhealth
-                fail["probability"] = 0.25
-                fail["reward"] = STEP_COST
                 ns["states"].append(succ)
                 ns["states"].append(fail)
             elif i == "CRAFT":
