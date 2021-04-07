@@ -33,35 +33,56 @@ def genAandR(total_states):
     R = []
     possible_states = np.zeros(total_states)
     possible_actions = []
-    for pos in POSITION:
-        for mat in MATERIAL:
-            for arrow in ARROW:
-                for state in STATE:
-                    for health in HEALTH:
-                        if health == 0:
-                            continue
-                        ij = IndianaJones(
-                            pos, mat, arrow, state, 25 * health, 0)
-                        enum_here = ''.join(
-                            [pos, str(mat), str(arrow), state, str(health)])
-                        index_here = ENUM[enum_here]
-                        actions = ij.getNextStates()
-                        for action in actions:
-                            vec_here = np.zeros(total_states)
-                            avg_reward = 0
-                            for ns in action["states"]:
-                                vec_here[index_here] += ns["probability"]
-                                enum = ''.join(
-                                    [ns["next_pos"], str(ns["next_mat"]), str(ns["next_arrow"]), ns["next_mmstate"], str(ns["next_mmhealth"]//25)])
-                                index = ENUM[enum]
-                                vec_here[index] = -ns["probability"]
-                                avg_reward += ns["reward"]
-                            possible_states[index_here] += 1
-                            if len(action["states"]) > 0:
-                                avg_reward /= len(action["states"])
-                            R.append(avg_reward)
-                            A.append(vec_here.tolist())
-                            possible_actions.append(action["action"])
+    for i in ENUM:
+        pos = i[0]
+        mat = ord(i[1]) - ord('0')
+        arrow = ord(i[2]) - ord('0')
+        state = i[3]
+        health = ord(i[4]) - ord('0')
+        health_25 = health * 25
+        print(i, pos, mat, arrow, state, health, health_25, ENUM[i])
+        ij = IndianaJones(pos, mat, arrow, state, health_25, 0)
+        index_here = ENUM[i]
+        actions = ij.getNextStates()
+
+        is_exit_state = 0
+        for action in actions:
+            vec_here = np.zeros(total_states)
+            vec_here[index_here] = 1
+            if len(action["states"]) == 0:
+                is_exit_state = 1
+                print(actions)
+            else:
+                av_reward = 0
+                av_old = 0
+                tpt = 0
+                for ns in action["states"]:
+                    if ns["reward"] == -60:
+                        print("EYEYYEYEYEYEY")
+                    enum = ''.join(
+                        [ns["next_pos"], str(ns["next_mat"]), str(ns["next_arrow"]), ns["next_mmstate"], str(ns["next_mmhealth"]//25)])
+                    tpt += ns["probability"]
+                    av_reward += ns["reward"] * ns["probability"]
+                    av_old += ns["reward"]
+                    if enum == i:
+                        continue
+                    index = ENUM[enum]
+                    vec_here[index] -= ns["probability"]
+                possible_states[index_here] += 1
+                av_old /= len(action["states"])
+                av_reward /= tpt
+                if abs(av_old - av_reward) > 0.000001:
+                    print(action)
+                A.append(vec_here.tolist())
+                R.append(av_reward)
+                possible_actions.append(action["action"])
+        if is_exit_state == 1:
+            vec_here = np.zeros(total_states)
+            vec_here[index_here] = 1
+            A.append(vec_here.tolist())
+            R.append(0)
+            possible_states[index_here] += 1
+            possible_actions.append("EXIT")
     return A, R, possible_states, possible_actions
 
 
@@ -71,30 +92,11 @@ def getpolicy(X, possible_states, possible_actions):
     policy = []
 
     for i in ENUM:
-        print(i)
-        print("\t", possible_states[ENUM[i]])
         if possible_states[ENUM[i]] > 0:
             index = np.argmax(X[int(idx): idx + int(possible_states[ENUM[i]])])
             policy.append(
                 [[i[0], (ord(i[1]) - ord('0')), ord(i[2]) - ord('0'), i[3], 25 * (ord(i[4]) - ord('0'))], possible_actions[idx + index]])
             idx += int(possible_states[ENUM[i]])
-    # for pos in POSITION:
-    #     for mat in MATERIAL:
-    #         for arrow in ARROW:
-    #             for state in STATE:
-    #                 for health in HEALTH:
-    #                     if health == 0:
-    #                         continue
-    #                     if possible_states[j] == 0:
-    #                         j += 1
-    #                         # policy.append("LMAO")
-    #                         continue
-    #                     index = np.argmax(
-    #                         X[int(i):i + int(possible_states[j])])
-    #                     policy.append(
-    #                         [[pos, mat, arrow, state, 25 * health], possible_actions[i + index]])
-    #                     i += int(possible_states[j])
-    #                     j += 1
 
     return policy
 
@@ -104,11 +106,6 @@ if __name__ == "__main__":
     A, R, possible_states, possible_actions = genAandR(total_states)
 
     idx = 0
-    for i in ENUM:
-        print(i, ":")
-        for j in range(int(possible_states[ENUM[i]])):
-            print("\t", possible_actions[int(idx + j)])
-        idx += possible_states[ENUM[i]]
 
     size = len(A)
 
@@ -132,9 +129,10 @@ if __name__ == "__main__":
     objective = problem.solve()
 
     X = X.value
+    print(X)
     X = list(chain.from_iterable(X))
 
-    print(len(X))
+    # print(len(X))
 
     policy = getpolicy(X, possible_states, possible_actions)
 
@@ -149,3 +147,4 @@ if __name__ == "__main__":
 
     with open("./output/part_3_output.json", "w") as f:
         json.dump(to_write, f)
+    print(objective)
