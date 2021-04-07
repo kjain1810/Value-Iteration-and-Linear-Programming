@@ -40,7 +40,6 @@ def genAandR(total_states):
         state = i[3]
         health = ord(i[4]) - ord('0')
         health_25 = health * 25
-        print(i, pos, mat, arrow, state, health, health_25, ENUM[i])
         ij = IndianaJones(pos, mat, arrow, state, health_25, 0)
         index_here = ENUM[i]
         actions = ij.getNextStates()
@@ -51,14 +50,11 @@ def genAandR(total_states):
             vec_here[index_here] = 1
             if len(action["states"]) == 0:
                 is_exit_state = 1
-                print(actions)
             else:
                 av_reward = 0
                 av_old = 0
                 tpt = 0
                 for ns in action["states"]:
-                    if ns["reward"] == -60:
-                        print("EYEYYEYEYEYEY")
                     enum = ''.join(
                         [ns["next_pos"], str(ns["next_mat"]), str(ns["next_arrow"]), ns["next_mmstate"], str(ns["next_mmhealth"]//25)])
                     tpt += ns["probability"]
@@ -68,6 +64,8 @@ def genAandR(total_states):
                         continue
                     index = ENUM[enum]
                     vec_here[index] -= ns["probability"]
+                if i == "E02R3":
+                    print(action, vec_here, av_reward)
                 possible_states[index_here] += 1
                 av_old /= len(action["states"])
                 av_reward /= tpt

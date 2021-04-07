@@ -128,7 +128,10 @@ class IndianaJones:
                     fail["next_arrow"] = self.state_arrow
                     fail["next_mmhealth"] = self.state_mmhealth
                     fail["probability"] = 0.15
-                    fail["reward"] = STEP_COST
+                    if self.task == 2 and i == "STAY":
+                        fail["reward"] = 0
+                    else:
+                        fail["reward"] = STEP_COST
                     ns["states"].append(fail)
                 ns["states"].append(succ)
             elif i == "SHOOT":
