@@ -52,14 +52,12 @@ def genAandR(total_states):
                 is_exit_state = 1
             else:
                 av_reward = 0
-                av_old = 0
                 tpt = 0
                 for ns in action["states"]:
                     enum = ''.join(
                         [ns["next_pos"], str(ns["next_mat"]), str(ns["next_arrow"]), ns["next_mmstate"], str(ns["next_mmhealth"]//25)])
                     tpt += ns["probability"]
                     av_reward += ns["reward"] * ns["probability"]
-                    av_old += ns["reward"]
                     if enum == i:
                         continue
                     index = ENUM[enum]
@@ -67,10 +65,7 @@ def genAandR(total_states):
                 if i == "E02R3":
                     print(action, vec_here, av_reward)
                 possible_states[index_here] += 1
-                av_old /= len(action["states"])
                 av_reward /= tpt
-                if abs(av_old - av_reward) > 0.000001:
-                    print(action)
                 A.append(vec_here.tolist())
                 R.append(av_reward)
                 possible_actions.append(action["action"])
@@ -119,6 +114,8 @@ if __name__ == "__main__":
     alpha = alpha.transpose()
     alpha = np.array(alpha)
     alpha = alpha[:, np.newaxis]
+
+    print(A)
 
     X = cp.Variable(shape=(size, 1), name="X")
     constraints = [cp.matmul(A, X) == alpha, X >= 0]

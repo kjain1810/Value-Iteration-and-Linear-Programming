@@ -159,7 +159,10 @@ class IndianaJones:
                     fail["next_arrow"] = self.state_arrow
                     fail["next_mmhealth"] = self.state_mmhealth
                     fail["probability"] = 0.15
-                    fail["reward"] = STEP_COST
+                    if self.task == 2 and i == "STAY":
+                        fail["reward"] = 0
+                    else:
+                        fail["reward"] = STEP_COST
                     ns["states"].append(fail)
                 ns["states"].append(succ)
             elif i == "SHOOT":
@@ -330,8 +333,8 @@ def value_iteration():
             properState = IndianaJones(
                 POSITION[state[0]], state[1], state[2], STATE[state[3]], state[4]*25, TASK)
             if(properState.state_mmhealth == 0):
-                printer.write("(%c,%d,%d,%c,%d):%s=[%f]\n" % (POSITION[state[0]], state[1],
-                                                              state[2], STATE[state[3]], state[4] * 25, "NONE", 0.0))
+                printer.write("(%c,%d,%d,%c,%d):%s=[0.000]\n" % (POSITION[state[0]], state[1],
+                                                              state[2], STATE[state[3]], state[4] * 25, "NONE"))
                 continue
             actions = properState.getNextStates()
             new_util = np.NINF
@@ -347,8 +350,8 @@ def value_iteration():
                     policies[state[0], state[1], state[2],
                              state[3], state[4]] = action["action"]
             temp[state] = new_util
-            printer.write("(%c,%d,%d,%c,%d):%s=[%f]\n" % (POSITION[state[0]], state[1],
-                                                          state[2], STATE[state[3]], state[4] * 25, policies[state], new_util))
+            printer.write("(%c,%d,%d,%c,%d):%s=[%.3f]\n" % (POSITION[state[0]], state[1],
+                                                          state[2], STATE[state[3]], state[4] * 25, policies[state], round(new_util, 3)))
             delta = max(delta, np.abs(util - new_util))
         utilities = temp
         if delta < DELTA:
