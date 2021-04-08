@@ -114,7 +114,7 @@ if __name__ == "__main__":
     R = R.transpose()
     alpha = np.zeros(total_states)
 
-    alpha[ENUM["W00D4"]] = 1
+    alpha[ENUM["C23D4"]] = 1
 
     alpha = alpha.transpose()
     alpha = np.array(alpha)
