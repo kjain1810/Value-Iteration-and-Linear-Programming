@@ -4,9 +4,9 @@ import json
 import cvxpy as cp
 import os
 import sys
-team_number = 0
+team_number = 18
 cost_arr = [1/2, 1, 2]
-step_cost = int(-10 / cost_arr[team_number % 3])
+step_cost = -20
 
 max_pos = 5  # [N,S,E,W,C]
 max_mat = 3
@@ -24,9 +24,10 @@ arrow_ind = 2
 mon_state_ind = 3
 mon_health_ind = 4
 
-action_map = ["UP", "LEFT", "DOWN", "RIGHT", "STAY",
-              "SHOOT", "HIT", "CRAFT", "GATHER", "NONE"]
-pos_map = ['N', 'S', 'E', 'W', 'C']
+action_map = ["STAY", "RIGHT", "LEFT", "DOWN", "UP", "SHOOT", "HIT", "CRAFT", "GATHER", "NONE"]
+# action_map = ["UP", "LEFT", "DOWN", "RIGHT", "STAY",
+#               "SHOOT", "HIT", "CRAFT", "GATHER", "NONE"]
+pos_map = ['W', 'N', 'E', 'S', 'C']
 monster_state_map = ['D', 'R']
 
 start_state = ['C', 2, 3, 'R', 100]
@@ -396,3 +397,13 @@ problem = cp.Problem(objective, constraints)
 
 solution = problem.solve()
 print(solution)
+
+# print(A_matrix.shape)
+# print(x_arr.shape)
+# print(len(reward_arr))
+
+# print(reward_arr)
+# for x in A_matrix:
+#     for y in x:
+#         print("%.1f" % y, end=" ")
+#     print("")
