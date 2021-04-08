@@ -20,39 +20,39 @@ For ```(W, 0, 0, D, 100)```
 IJ directly tries to go to East and HIT MM continuously from there. It leaves out the policies to GATHER and CRAFT as they require 5-6 more steps with a probability factor in  GATHER and moving too, making just directly hitting MM the better choice.
 
 ```
-['W', '0', '0', 'D', '4']
+['W', 0, 0, 'D', 100]
 RIGHT
-['C', '0', '0', 'D', '4']
+['C', 0, 0, 'D', 100]
 RIGHT
-['E', '0', '0', 'D', '4']
+['E', 0, 0, 'D', 100]
 HIT
-['E', '0', '0', 'D', '4']
+['E', 0, 0, 'D', 100]
 HIT
-['E', '0', '0', 'D', '4']
+['E', 0, 0, 'D', 100]
 HIT
-['E', '0', '0', 'D', '4']
+['E', 0, 0, 'D', 100]
 HIT
-['E', '0', '0', 'D', '4']
+['E', 0, 0, 'D', 100]
 HIT
-['E', '0', '0', 'D', '4']
+['E', 0, 0, 'D', 100]
 HIT
-['E', '0', '0', 'D', '4']
+['E', 0, 0, 'D', 100]
 HIT
-['E', '0', '0', 'D', '4']
+['E', 0, 0, 'D', 100]
 HIT
-['E', '0', '0', 'D', '4']
+['E', 0, 0, 'D', 100]
 HIT
-['E', '0', '0', 'R', '4']
+['E', 0, 0, 'R', 100]
 HIT
-['E', '0', '0', 'R', '2']
+['E', 0, 0, 'R', 50]
 HIT
-['E', '0', '0', 'R', '2']
+['E', 0, 0, 'R', 50]
 HIT
-['E', '0', '0', 'D', '4']
+['E', 0, 0, 'D', 100]
 HIT
-['E', '0', '0', 'R', '2']
+['E', 0, 0, 'R', 50]
 HIT
-['E', '0', '0', 'R', '0']
+['E', 0, 0, 'R', 0]
 exit    
 Game over!
 
@@ -63,25 +63,25 @@ For ```(C, 2, 0, R, 100)```
 Here, since IJ already had material, he tries to go UP and CRAFT arrows. In this simulation, that is successful. Then, as MM is in Ready state, IJ decides to STAY in North and wait till MM goes to Dormant state. Once that happens, IJ travels to East first, then just shoots and hits MM till the end of the game.
 
 ```
-['C', '2', '0', 'R', '4']
+['C', 50, 0, 'R', 100]
 UP
-['N', '2', '0', 'R', '4']
+['N', 50, 0, 'R', 100]
 CRAFT
-['N', '1', '3', 'R', '4']
+['N', 1, 3, 'R', 100]
 STAY
-['N', '1', '3', 'D', '4']
+['N', 1, 3, 'D', 100]
 DOWN
-['C', '1', '3', 'D', '4']
+['C', 1, 3, 'D', 100]
 RIGHT
-['E', '1', '3', 'D', '4']
+['E', 1, 3, 'D', 100]
 SHOOT
-['E', '1', '2', 'D', '3']
+['E', 1, 50, 'D', 75]
 SHOOT
-['E', '1', '1', 'D', '2']
+['E', 1, 1, 'D', 50]
 SHOOT
-['E', '1', '0', 'D', '1']
+['E', 1, 0, 'D', 1]
 HIT
-['E', '1', '0', 'D', '0']
+['E', 1, 0, 'D', 0]
 exit    
 Game over!
 
