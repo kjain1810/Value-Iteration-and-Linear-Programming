@@ -3,7 +3,6 @@ import json
 import numpy as np
 from itertools import chain
 
-from indianajones import IndianaJones
 
 POSITION = ['W', 'N', 'E', 'S', 'C']
 MATERIAL = [0, 1, 2]
