@@ -2,9 +2,25 @@
 
 ## A matrix
 
-We first start by creating a matrix of dimension 1936 x 600, where 1936 are number of state-action pairs and 600 is the number of states.
+We first start by creating a matrix of dimension ```1936 x 600```, where 1936 are number of state-action pairs and 600 is the number of states.
+
+### Structure
 
 Our matrix will have a row for each of the state-action pair. In each of these rows, for states that are not end states, the value of the next states index will be -(probability of reaching that state) while the value of the current state index will be (probability of going to a different state). For end states, the value of the current state index will be 1. All the rest in both the cases will be 0. This ensures that the flow from the end state is 1 and the flow from all the other states is 0.
+
+### Construction
+
+For construction of ```A``` matrix we iterate over all the possible states of our system, and for each state, we add a vector of size(total possible state-action pairs) with appropriate values. All the values of the ```vector``` are initialised with 0.
+
+Psuedo code:
+```
+for state in all states:
+    for action in state[actions]:
+        vector[state-action index] -= probability of action
+        vector[state index] += probability of action
+        add vector
+```
+ For the actions which results in same state, the probability is kept 0 so as to avoid the self looping transitions. The matrix formed by this procedure is then transposed to get the ```A``` matrix.
 
 ## R vector
 
