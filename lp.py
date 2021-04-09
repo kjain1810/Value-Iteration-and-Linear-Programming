@@ -62,8 +62,6 @@ def genAandR(total_states):
                         continue
                     index = ENUM[enum]
                     vec_here[index] -= ns["probability"]
-                if i == "E02R3":
-                    print(action, vec_here, av_reward)
                 possible_states[index_here] += 1
                 av_reward /= tpt
                 A.append(vec_here.tolist())
@@ -98,6 +96,8 @@ if __name__ == "__main__":
     total_states = enumerate_states()
     A, R, possible_states, possible_actions = genAandR(total_states)
 
+    
+
     idx = 0
 
     size = len(A)
@@ -108,14 +108,17 @@ if __name__ == "__main__":
     R = R[:, np.newaxis]
     R = R.transpose()
     alpha = np.zeros(total_states)
-
-    alpha[ENUM["C23D4"]] = 1
+    # for x in A:
+    #     for y in x:
+    #         print("%.1f" % y, end=" ")
+    #     print("")
+    alpha[ENUM["C23R4"]] = 1
 
     alpha = alpha.transpose()
     alpha = np.array(alpha)
     alpha = alpha[:, np.newaxis]
 
-    print(A)
+    # print(A)
 
     X = cp.Variable(shape=(size, 1), name="X")
     constraints = [cp.matmul(A, X) == alpha, X >= 0]
@@ -124,7 +127,7 @@ if __name__ == "__main__":
     objective = problem.solve()
 
     X = X.value
-    print(X)
+    # print(X)
     X = list(chain.from_iterable(X))
 
     # print(len(X))
