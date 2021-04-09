@@ -47,7 +47,6 @@ def genAandR(total_states):
         is_exit_state = 0
         for action in actions:
             vec_here = np.zeros(total_states)
-            vec_here[index_here] = 1
             if len(action["states"]) == 0:
                 is_exit_state = 1
             else:
@@ -62,6 +61,7 @@ def genAandR(total_states):
                         continue
                     index = ENUM[enum]
                     vec_here[index] -= ns["probability"]
+                    vec_here[index_here] += ns["probability"]
                 possible_states[index_here] += 1
                 av_reward /= tpt
                 A.append(vec_here.tolist())
@@ -108,10 +108,6 @@ if __name__ == "__main__":
     R = R[:, np.newaxis]
     R = R.transpose()
     alpha = np.zeros(total_states)
-    # for x in A:
-    #     for y in x:
-    #         print("%.1f" % y, end=" ")
-    #     print("")
     alpha[ENUM["C23R4"]] = 1
 
     alpha = alpha.transpose()
@@ -146,3 +142,7 @@ if __name__ == "__main__":
     with open("./output/part_3_output.json", "w") as f:
         json.dump(to_write, f)
     print(objective)
+    for x in A:
+        for y in x:
+            print("%.1f" % y, end=" ")
+        print("")
