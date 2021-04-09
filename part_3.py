@@ -403,7 +403,7 @@ print(solution)
 # print(len(reward_arr))
 
 # print(reward_arr)
-# for x in A_matrix:
-#     for y in x:
-#         print("%.1f" % y, end=" ")
-#     print("")
+for x in A_matrix:
+    for y in x:
+        print("%.1f" % y, end=" ")
+    print("")
